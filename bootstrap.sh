@@ -28,12 +28,14 @@ mkdir -p win
 # https://chromium.googlesource.com/chromium/buildtools/+/master/win/gn.exe.sha1
 echo "copy win gn into win/gn.exe with version: $(getGnHash win)"
 ./gsutil/gsutil cp gs://chromium-gn/$(getGnHash win) win/gn.exe
+chmod +x win/gn.exe
 
 # https://chromium.googlesource.com/chromium/buildtools/+/master/mac/gn.sha1
 echo "copy mac gn into mac/gn with version: $(getGnHash mac)"
 ./gsutil/gsutil cp gs://chromium-gn/$(getGnHash mac) mac/gn
+chmod +x mac/gn
 
 # https://chromium.googlesource.com/chromium/buildtools/+/master/linux64/gn.sha1 
 echo "copy linux64 gn into win/gn.exe with version: $(getGnHash linux64)"
 ./gsutil/gsutil cp gs://chromium-gn/$(getGnHash linux64) linux/gn
-
+chmod +x linux/gn
